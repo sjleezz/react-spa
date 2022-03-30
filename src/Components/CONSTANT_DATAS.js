@@ -1,0 +1,2 @@
+export const URLS = {"main" : "http://localhost:3000/main", "insert" : "http://localhost:3000/insert", "show":"http://localhost:3000/newShow"};
+export const DEPARTMENTS = ['AI Solution', 'AI Platform', 'Cloud Solution', 'Cloud Platform'];
