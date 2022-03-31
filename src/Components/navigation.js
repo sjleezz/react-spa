@@ -1,18 +1,17 @@
-export let homeButton = document.createElement("img");
-export let infoButton = document.createElement("img");
-homeButton.setAttribute("id", "home");
-infoButton.setAttribute("id", "info");
-homeButton.setAttribute("src", "./resource/home.png");
-infoButton.setAttribute("src", "./resource/info.png");
-homeButton.setAttribute("width", "40px");
-infoButton.setAttribute("width", "40px");
-homeButton.setAttribute("height", "40px");
-infoButton.setAttribute("height", "40px");
-homeButton.addEventListener("click", returnHome);
-infoButton.addEventListener("click", info);
+import {Link} from 'react-router-dom';
+
+export const homeButton = (
+    <img id='home' src="./resource/home.png" width="40px" height="40px" onClick={returnHome}></img>
+)
+
+export const infoButton = (
+    <img id='info' src="./resource/info.png" width="40px" height="40px" onClick={info}></img>
+)
 
 function returnHome() {
-    location.href = location.href = "http://localhost:3000/main";
+    return (
+        <Link to="/main"></Link>
+    )
 }
 
 function info() {

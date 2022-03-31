@@ -1,42 +1,56 @@
 import React from 'react';
 import getData from './fetchData.js';
+import '../css/main_style.css';
+import {filter, addMember, covidInfo, showDetail, notice} from './functions_main';
+import HamburgerMenuImage from '../resource/icon_no_stroke_menu_normal.png';
+import insertDataImage from '../resource/icon_no_stroke_edit_normal.png';
 
-const DATA_ROUTING = '/data_main';
-//const DATA_ROUTING = '/mock_data_main';
 
-const HamburgerMenu = function() {
+
+const HamburgerMenu = () => {
     return (
-      <img className='floating_button' src='./resource/icon_no_stroke_menu_normal.png' onClick={covidInfo}></img>  
+      <img className='floating_button' src={HamburgerMenuImage} onClick={covidInfo}></img>  
     );
 }
 
 
-const MainGate = function() {
+const MainGate = () => {
     return (
         <h1 id="gate">Covid-19<br></br>Management Page</h1>
     );
 
 } 
 
-const SearchName = function() {
+const SearchName = () => {
     return (
         <div className='main'>
-            <input id='search' typeof='text' placeholder='이름 검색' onKeyUp={filter}></input>    
+            <input id='search' type='text' placeholder='이름 검색' onKeyUp={filter}></input>    
         </div>
     )
 } 
 
-const InsertMember = function() {
+const InsertMember = () => {
     let w = '100px', h = '100px';
     return (
         <div className='insert'>
-            <img id='addMem' src='./resource/icon_no_stroke_edit_normal.png' 
+            <img id='addMem' src={insertDataImage} 
             width={w} height={h} onClick={addMember} onMouseOver={notice}></img>
         </div>
     )
 } 
 
-const MemberTableRecord = function() {
+const BottomLabel = () => {
+    const bottomName = "Mediazen Corporation";
+    return (
+        <div className='bottom'>
+            <div className='tail'>{bottomName}</div>
+        </div>
+    )
+}
+
+const MemberTableRecord = () => {
+    const DATA_ROUTING = '/data_main';
+    //const DATA_ROUTING = '/mock_data_main';   
     const rows = [];
     const mainDataCallBack = (data) => {
         for(let i = 0 ; i < data.length ; i++) {
@@ -68,27 +82,29 @@ const MemberTableHeader = function() {
         for (let i=0 ; i<3 ; i++) {
             ths.push(<th key={i}>{tableHeaderNames[i]}</th>);
         }
+        return ths;
     }
     return (
-        <table id='datas'>
-            {rendering()}
-        </table>
-        
+        <tr>
+        {rendering()}
+        </tr>
     );
 }
 
 const MemberTable = function() {
-    const rows = [];
-    rows.push(<MemberTableHeader></MemberTableHeader>);
-    rows.push(<MemberTableRecord></MemberTableRecord>);
     return (
         <table id='datas'>
-            {rows}
+            <thead>
+                <MemberTableHeader></MemberTableHeader>
+            </thead>
+            <tbody>
+                <MemberTableRecord></MemberTableRecord>
+            </tbody>
         </table>
     );
 } 
 
-const Main = function() {
+const MainPage = () => {
     return (
         <div>
             <MainGate></MainGate>
@@ -96,55 +112,10 @@ const Main = function() {
             <SearchName></SearchName>
             <InsertMember></InsertMember>
             <MemberTable></MemberTable>
+            <BottomLabel></BottomLabel>
         </div>
         
     );
 }
 
-export default Main;
-
-
-// div
-div3.setAttribute("class", "bottom");
-div4.setAttribute("class", "tail");
-let div4_text = document.createTextNode("MediaZen Corporation");
-div4.appendChild(div4_text);
-div3.appendChild(div4);
-body.appendChild(div3);
-
-
-// search 기능
-function filter() { 
-    let search, record, name;
-    search = document.getElementById("search").value.toUpperCase();
-    record = document.getElementsByClassName("record");
-    for (let i=0; i<record.length; i++) {
-        name = record[i].getElementsByClassName("name");
-        if(name[0].innerHTML.toUpperCase().indexOf(search) > -1) {
-            record[i].style.display = "table-row";
-        }
-        else {
-            record[i].style.display = "none";
-        }
-    }
-}
-
-function addMember () {
-    // go to insert data page
-    location.href = "http://localhost:3000/insert";
-}
-
-function showDetail (evt) {
-    let selectedName = evt.currentTarget.firstChild.innerText;
-    // go to show detail page
-    location.href = "http://localhost:3000/newShow?selectedName="+selectedName;
-}
-
-function notice () {
-    // notice
-}
-
-function covidInfo() {
-    alert("covid information");
-}
-
+export default MainPage;

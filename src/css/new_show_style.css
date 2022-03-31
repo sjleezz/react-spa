@@ -1,0 +1,285 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#widget {
+    margin-top: 5%;
+    display: flex;
+    justify-content:center;
+    top:10%;
+    right:10%;
+}
+
+#widget #home {
+    padding: 0;
+    background: no-repeat;
+    border: none;
+
+}
+
+#widget #home:hover {
+    padding: 0;
+    background: no-repeat;
+    color: #30a6f0;
+    border: none;
+    transform: translate(0, 15px) scale(150%, 150%);
+
+}
+
+#widget #info {
+    float:right;
+    padding: 0;
+    background: no-repeat;
+    border: none;
+    margin-left: 50px;
+
+}
+
+#widget #info:hover {
+    padding: 0;
+    background: no-repeat;
+    border: none;
+    margin-left: 50px;
+    transform: translate(0, 15px) scale(150%, 150%);
+
+}
+
+body {
+    font-family: "Montserrat";
+    background-color: #ffffff;
+    color: #fdfdfd;
+}
+
+.card {
+    max-width: 250px;
+    margin: 150px auto 0;
+    background-color: #42515a;
+    box-shadow: 2px 2px 10px #00000024;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.card .card-header {
+    position: relative;
+    height: 48px;
+}
+.card .card-header .profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 1000px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid #59caff;
+    box-shadow: 0 0 20px #00000033;
+}
+
+.card .card-header .profile-img:hover {
+    width: 200px;
+    height: 200px;
+    border: 8px solid #51c8ff;
+}
+
+.card .card-body {
+    padding: 10px 40px;
+}
+
+.card .card-body .name {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0c94d3;
+}
+
+.card .card-body .name:hover {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #adbcec;
+}
+
+.card .card-body .dept {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #cacaca;
+}
+
+.card .card-body .dept:hover {
+    margin-top: 5px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.card .card-body .date {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #cacaca;
+}
+
+.card .card-body .date:hover {
+    margin-top: 5px;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.card .card-body .isIsolated {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #18b420;
+}
+
+.card .card-body .isIsolated:hover {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #c4fcc4;
+}
+
+.card .card-body .phone {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #cacaca;
+}
+
+.card .card-body .phone:hover {
+    margin-top: 5px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.card .card-body .job {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.card .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.card .social-links .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    background-color: #c74385;
+    color: #ffffff;
+    font-size: 20px;
+    border-radius: 100%;
+    text-decoration: none;
+    margin: 0 13px 30px 0;
+}
+
+.card .social-links .social-icon:last-child {
+    margin-right: 0;
+}
+
+.card .social-links .social-icon:hover {
+    background-color: #d885af;
+    height: 50px;
+    width: 50px;
+    text-decoration: none;
+}
+
+.card .card-footer {
+    background-color: #40b9e9;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 20px 0 20px 0;
+}
+
+.card .card-footer .count {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 575px) {
+    .card {
+        width: 96%;
+    }
+
+    .card .card-body {
+        padding: 10px 20px;
+    }
+}
+
+#side {
+    display: flex;
+    justify-content:center;
+}
+
+#side .prev {
+    float: left;
+    position : absolute;
+    display: block;
+    left:20%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    height: 90px;
+    width: 180px;
+
+    background: no-repeat;
+    border: none;
+
+    text-align:center;
+}
+
+#side .prev:hover {
+    float: left;
+    position : absolute;
+    display: block;
+    left:19%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    height: 100px;
+    width: 200px;
+
+    background: no-repeat;
+    border: none;
+
+    text-align:center;
+}
+
+#side .next {
+    float: right;
+    position : absolute;
+    display: block;
+    left:80%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    height: 90px;
+    width: 180px;
+
+    background: no-repeat;
+    border: none;
+}
+
+#side .next:hover {
+    float: right;
+    position : absolute;
+    display: block;
+    left:81%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    height: 100px;
+    width: 200px;
+
+    background: no-repeat;
+    border: none;
+}
