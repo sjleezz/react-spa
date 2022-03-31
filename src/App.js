@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Routes, Route} from 'react-router-dom';
 
-function App() {
+import axios from 'axios';
+import { useEffect } from 'react';
+
+import './App.css';
+import MainPage from "./Components/main.js";
+import InsertDataPage from "./Components/insertData.js";
+import ShowDetailPage from "./Components/showDetail.js";
+
+const App = function() {
+  const callApi = async()=>{
+    axios.get("/main").then((res)=>{console.log("/main")});
+  };
+
+  useEffect(()=>{
+    callApi();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route exact path="/" element={<MainPage/>}></Route>
+      <Route exact path="/main" element={<MainPage/>}></Route>
+      <Route exact path="/insertData" element={<InsertDataPage/>}></Route>
+      {/* {<Route exact path="/showDetail" element={<ShowDetailPage/>}></Route>} */}
+    </Routes>
+    
+    
   );
 }
 

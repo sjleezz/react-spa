@@ -1,0 +1,135 @@
+
+* {
+  transition: 0.5s;
+}
+
+body {
+  background-image: url("../resource/bg1.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#gate {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 10%;
+    text-shadow: #000000;
+    
+}
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.show {
+    display: flex;
+    border: 10px; 
+    align-items: center;
+    margin: 20px;
+    padding: 50px;
+    border: 3px solid rgb(58, 58, 58);
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px;
+        
+}
+button {
+  width: max-content;
+  margin: 10px;
+}
+
+.floating_button {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  top: 8%;
+  left: 8%;   
+  padding: 0;
+  background: no-repeat;
+  border: none;
+}
+
+.main {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  
+  display: flex;
+  justify-content:center;
+  top:10%;
+  right:10%;
+}
+
+.insert {
+  margin-top: 1%;
+  margin-bottom: 4%;
+  display: flex;
+  justify-content:center;
+}
+
+.insert #addMem {
+  padding: 0;
+  background: no-repeat;
+  border: none;
+
+}
+
+.insert #addMem:hover {
+  padding: 0;
+  background: no-repeat;
+  color: #30a6f0;
+  border: none;
+  transform: translate(0, 13px);
+
+}
+
+#datas {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  #datas td, #datas th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  #datas tr:nth-child(even){
+      background-color: #f2f2f2;
+    }
+
+    #datas tr:nth-child(odd){
+      background-color: #d4d4d4;
+    }
+  
+  #datas tr:hover {
+      background-color: rgb(145, 145, 145);
+      
+    }
+  
+  #datas th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #016ea0;
+    color: white;
+  }
+ 
+  .bottom {
+    display: flex;
+    justify-content: center;
+    width : 100%;
+    height: 100px;
+    margin-top: 4%;
+    background-color: #596872;
+
+    line-height:100px;
+  }
+
+  .bottom .tail {
+    margin: 0 auto;
+    color: #f2f2f2;
+  }
+
